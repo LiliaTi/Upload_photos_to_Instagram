@@ -123,6 +123,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-# folders
-Images
-config
+# my folders
+/Images
+/config
