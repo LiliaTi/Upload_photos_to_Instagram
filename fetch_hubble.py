@@ -1,6 +1,7 @@
 import requests
 from pathlib import Path
 from fetch_spacex import load_image, prepare_image_for_Instagram
+import argparse
 
 
 def image_extension(link_of_image):
@@ -32,8 +33,11 @@ def load_hubble_collection(collection_name, path):
 		
 
 if __name__ == '__main__':
-	
+	parser = argparse.ArgumentParser()
+    parser.add_argument('collection', help='Введите название коллекции')
+    args = parser.parse_args()
+    collection = args.collection
 	path = Path.home() / 'PythonProjects' / 'Upload_photos_to_Instagram' / 'Images' 
 	path.mkdir(parents=True, exist_ok=True)
 
-	load_hubble_collection('news', path)
+	load_hubble_collection(collection, path)
