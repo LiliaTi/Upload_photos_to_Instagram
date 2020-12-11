@@ -24,6 +24,7 @@ python fetch_spacex.py
 python fetch_hubble.py collection
 ```
 Где, `collection` - название коллекции фотографий. Названия некоторых коллекций: `gallery`, `news`, `printshop`, `spacecraft`, `wallpaper`.
+
 Фотографии будут находится в каталоге `\PythonProjects\Upload_photos_to_Instagram\Images` (если каталог еще не создан, он создастся автоматически)
 
 ### Публикация в Instagram
