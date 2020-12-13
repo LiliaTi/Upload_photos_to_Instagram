@@ -5,15 +5,15 @@ from dotenv import load_dotenv
 
 
 if __name__ == '__main__':
-	load_dotenv()
-	username = os.getenv("INSTA_LOGIN")
-	password = os.getenv("INSTA_PASSWORD")
-	path = Path.home() / 'PythonProjects' / 'Upload_photos_to_Instagram' / 'Images' 
-	
-	bot = Bot()
-	bot.login(username=username, password=password)
+    load_dotenv()
+    username = os.getenv("INSTA_LOGIN")
+    password = os.getenv("INSTA_PASSWORD")
+    path = Path.home() / 'Images'
 
-	images = os.listdir('Images')
+    bot = Bot()
+    bot.login(username=username, password=password)
 
-	for image in images:
-		bot.upload_photo(path / image)
+    images = os.listdir('Images')
+
+    for image in images:
+        bot.upload_photo(path / image)
