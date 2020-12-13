@@ -15,7 +15,7 @@ pip install -r requirements.txt
 ```python
 python fetch_spacex.py
 ```
-Фотографии будут находится в каталоге `\PythonProjects\Upload_photos_to_Instagram\Images` (если каталог еще не создан, он создастся автоматически)
+Фотографии будут находится в каталоге `\Images` (если каталог еще не создан, он создастся автоматически)
 
 ### Скачивание фотографий Hubble
 Используйте скрипт `fetch_hubble.py`:
@@ -25,7 +25,7 @@ python fetch_hubble.py collection
 ```
 Где, `collection` - название коллекции фотографий. Названия некоторых коллекций: `gallery`, `news`, `printshop`, `spacecraft`, `wallpaper`.
 
-Фотографии будут находится в каталоге `\PythonProjects\Upload_photos_to_Instagram\Images` (если каталог еще не создан, он создастся автоматически)
+Фотографии будут находится в каталоге `\Images` (если каталог еще не создан, он создастся автоматически)
 
 ### Публикация в Instagram
 Создайте в корне проекта файл `.env` и заполните Ваши данные(имя пользователя и пароль от Instagram):
@@ -37,7 +37,7 @@ INSTA_PASSWORD=YOUR_PASSWORD
 ```python
 python upload.py
 ```
-Фотографии будут загружаться из каталога `\PythonProjects\Upload_photos_to_Instagram\Images`
+Фотографии будут загружаться из каталога `\Images`
 
 ## Цель проекта
 Код написан в образовательных целях на онлайн-курсе для веб-разработчиков [dvmn.org](https://dvmn.org/modules/)
