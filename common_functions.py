@@ -6,8 +6,8 @@ import os
 def prepare_image_for_instagram(image_name, path):
     image = Image.open(path / image_name)
     image.thumbnail((1080, 1080))
-    image_name_parts = image_name.split('.')
-    if image_name_parts[-1] != 'jpg':
+    image_name_parts = os.path.splitext(image_name)
+    if image_name_parts[-1] != '.jpg':
         new_image_name = image_name_parts[0]
         image.save(path / f'{new_image_name}.jpg', format="JPEG")
         os.remove(path / image_name)
