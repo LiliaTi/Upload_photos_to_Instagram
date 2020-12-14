@@ -11,19 +11,23 @@ def load_hubble_image(image_id, path):
     response.raise_for_status()
     image_info = response.json()['image_files']
     links = [item['file_url'] for item in image_info]
-    link = 'https:' + links[-1]
+    link = f'https:{links[-1]}'
     filename = f'{image_id}{os.path.splitext(path)[-1]}'
     load_image(filename, link, path)
     prepare_image_for_instagram(filename, path)
 
 
 def load_hubble_collection(collection_name, path):
-    url = ('http://hubblesite.org/api/v3/images?page=all&collection_name={}').format(collection_name)
-    response = requests.get(url)
+    params = {
+        'collection_name': collection_name,
+        'page': 'all',
+    }
+    url = 'http://hubblesite.org/api/v3/images'
+    response = requests.get(url, params=params)
     response.raise_for_status()
-    ids = [item['id'] for item in response.json()]
-    for id in ids:
-        load_hubble_image(id, path)
+    image_ids = [item['id'] for item in response.json()]
+    for image_id in image_ids:
+        load_hubble_image(image_id, path)
 
 
 if __name__ == '__main__':
